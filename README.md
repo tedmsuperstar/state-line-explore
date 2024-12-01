@@ -1,1 +1,1 @@
-# state-line-explore
+state-line-explore is the front-end for displaying state-line-creations app's API calls as Product Cards.
