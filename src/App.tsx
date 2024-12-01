@@ -33,8 +33,8 @@ export interface List {
 
 interface Product {
   name : String 
-  displayPrice : String
-  displayLocation : String
+  display_price : String
+  display_location : String
   image1x:  String
   image2x : String
   srcSet: String
@@ -44,15 +44,18 @@ interface Product {
 
 
 function App() {
-  const placeholderProduct:Product = {name : "-----", 
-    displayPrice : "",
-    displayLocation : "",
-    image1x:  "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='100' height='100'%3E%3Crect width='100' height='100' style='fill:%235F67EE;' /%3E%3C/svg%3E",
-    image2x : "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='100' height='100'%3E%3Crect width='100' height='100' style='fill:%235F67EE;' /%3E%3C/svg%3E",
-    srcSet: "",
+
+  const placeholderUri = "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='100' height='100'%3E%3Crect width='100' height='100' style='fill:%23EFEFEF' /%3E%3C/svg%3E"
+
+  const placeholderProduct:Product = {name : '\u2014', 
+    display_price : "$\u2014",
+    display_location : "\u2014",
+    image1x:  placeholderUri,
+    image2x : placeholderUri,
+    srcSet: " ", // space so srcset doesn't popoulate for placeholders
     url: ""}
 
-  const placeholderList:List = {name:"---",products:[placeholderProduct,placeholderProduct,placeholderProduct,placeholderProduct,placeholderProduct,placeholderProduct,placeholderProduct,placeholderProduct,placeholderProduct,placeholderProduct]}
+  const placeholderList:List = {name:'\u2014',products:[placeholderProduct,placeholderProduct,placeholderProduct,placeholderProduct,placeholderProduct,placeholderProduct,placeholderProduct,placeholderProduct,placeholderProduct,placeholderProduct]}
   const placeholderLists = [placeholderList, placeholderList, placeholderList]
   const [lists, listsDispatch] = useReducer(listReducer, (pageConfig?.lists && pageConfig?.lists.length > 0) ? placeholderLists : []);
 

@@ -6,7 +6,7 @@ function ProductCard(props: any): JSX.Element {
     const displayLocation = props.displayLocation || ""
     const image1x = props.image1x || ""
     const image2x = props.image2x || image1x
-    const srcSet = `${image1x} 1x, ${image2x} 2x`
+    const srcSet = props.srcSet || `${image1x} 1x, ${image2x} 2x`
     const url = props.url || ""
 
     return (
