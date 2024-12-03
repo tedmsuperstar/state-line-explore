@@ -12,7 +12,7 @@ function ProductCardList(props: any): JSX.Element {
         <h3>{name}</h3>
         <div className="product-card-list-wrapper">
             <ul className="product-card-list" data-index={index}>
-            {products.map((product: any) => {return <li><ProductCard name={product.name} brand={product.brand} image1x={product.image1x} image2x={product.image2x} srcSet={product.srcSet || null} url={product.url} displayLocation={product.display_location} displayPrice={product.display_price}/></li>})}  
+            {products.map((product: any, productIndex:number) => {return <li><ProductCard name={product.name} brand={product.brand} image1x={product.image1x} image2x={product.image2x} loading={index < 2 && productIndex < 3 ? "eager" : "lazy"} srcSet={product.srcSet || null} url={product.url} displayLocation={product.display_location} displayPrice={product.display_price}/></li>})}  
                 
             </ul>
         </div>

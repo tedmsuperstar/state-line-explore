@@ -6,8 +6,10 @@ function ProductCard(props: any): JSX.Element {
     const displayLocation = props.displayLocation || ""
     const image1x = props.image1x || ""
     const image2x = props.image2x || image1x
-    const srcSet = props.srcSet || `${image1x} 1x, ${image2x} 2x`
+    const srcSet = props.srcSet || `${image1x} 300w, ${image2x} 600w`
+    const sizes= "(max-width: 600px) 300px, 600px"
     const url = props.url || ""
+    const loading = props.loading || "lazy"
 
     return (
  
@@ -16,9 +18,10 @@ function ProductCard(props: any): JSX.Element {
                 <article>
                     <div className="img-wrap">
                         <img  
-                        loading="lazy"
+                        loading={loading}
                         alt={name}
                         srcSet={srcSet}
+                        sizes={sizes}
                         src={image1x}/>
                     </div>
                     <section>
