@@ -28,7 +28,7 @@ function ProductCard(props: any): JSX.Element {
                         <div>
                             <h3>
                                 <h4 className="location">{displayLocation}</h4>
-                                <span className="product-name">{name}</span>
+                                <span className="display-name">{name}</span>
                             </h3>
                         </div>
                     </section>

@@ -3,6 +3,7 @@ import ProductCardList from "./components/ProductCardList"
 import './App.css'
 import { PageConfig, getLists } from './utils/api'
 import SearchBox from './components/SearchBox'
+import BurgerNav from './components/BurgerNav'
 
 
 const pageConfig:PageConfig = JSON.parse(document.getElementById('page-config')?.textContent || '')
@@ -76,6 +77,7 @@ function App() {
   return (
     
     <>
+         <BurgerNav/>
          <SearchBox listsDispatch={listsDispatch}/>
         {lists.map((list:List, index: number) => (
           <ProductCardList index={index} name={list.name} products={list.products} />
